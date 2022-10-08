@@ -48,6 +48,9 @@ const franchised = teammate => {
 
 const teamFranchised = wbfTeamObject.map(franchised);
 
+const franchisedObject = wbfTeamObject.filter(teammate => teammate.occupation === 'Franchisée');
+console.log(franchisedObject);
+
 const founder = wbfTeamObject.forEach(teammate => {
   const teammatesList = document.querySelector('#founder');
   if (teammate.occupation === 'Fondatrice') {
@@ -57,7 +60,19 @@ const founder = wbfTeamObject.forEach(teammate => {
   }
 })
 
+function findTeammate(occupation, teammates) {
+  const wbfFounder = teammates.find(teammate => teammate.occupation === 'Fondatrice');
+  return wbfFounder;
+};
+
+const wbfFounder = findTeammate('Fondatrice', wbfTeamObject);
+console.log(wbfFounder);
+
 const tags = document.querySelectorAll('.hidden');
 tags.forEach((tag, i) => {
-  setTimeout(() => tag.classList.remove('hidden'), i * 1000);
+  setTimeout(() => tag.classList.remove('hidden'), (i + 1) * 1000);
 })
+
+const [Fabiola, Gwen, Priscilla, Julie, Sandy, Chiara] = wbfTeamObject;
+console.log(Sandy);
+console.log(Julie.age);
