@@ -76,3 +76,25 @@ tags.forEach((tag, i) => {
 const [Fabiola, Gwen, Priscilla, Julie, Sandy, Chiara] = wbfTeamObject;
 console.log(Sandy);
 console.log(Julie.age);
+
+
+const fabiola = {
+  firstname: 'Fabiola',
+  lastname: 'Plazanet',
+  age: 33,
+  occupation: founder,
+};
+
+const {
+  firstname: prenom,
+  lastname: nom,
+  age
+} = fabiola;
+console.log(prenom, age);
+const fabiolaFirstname = prenom;
+console.log(fabiolaFirstname);
+
+const sayHelloToTeammate = ({firstname, lastname}) => {
+  document.querySelector('#helloFabiola').textContent = `Bonjour ${firstname} ${lastname} et bienvenue parmi nous`;
+};
+sayHelloToTeammate(fabiola);

@@ -1,0 +1,36 @@
+body {
+  background-color: #DEBDB8;
+  color: #303030;
+  display: flex;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+}
+
+#todo {
+  flex-direction: column;
+}
+
+input[type="text"]
+{
+  font-size: 1.5rem;
+}
+
+#todoInput, #todoTask {
+  font-family: 'Parisienne', cursive;
+  height: 4rem;
+  padding: 0.5rem;
+}
+
+#todoInput {
+  width: 40vw;
+}
+
+#todoTask {
+  background-color: #C6AA53;
+  border: solid 1px black;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  width: calc(40vw + 5px);
+}
