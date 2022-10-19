@@ -19,6 +19,14 @@ const app = {
     // add Attribute to input
     input.setAttribute('type', 'text');
     input.setAttribute('id', 'todoInput');
+
+    input.addEventListener('focus', app.handleInputFocus);
+  },
+
+
+  handleInputFocus: () => {
+    const inputTodo = document.querySelector('#todoInput');
+    inputTodo.style.backgroundColor = '#F5EBEA';
   },
 
   handleTask: (evt) => {
@@ -28,22 +36,21 @@ const app = {
     // get input value
     const inputValue = document.querySelector('#todoInput').value;
 
-    // TODO DIV QUI ENTOURE CHECKBOX ET TASK TAILLE DE LA DIV = TAILLE DE INPUT TEXT ET TAILLE DE TASK = TAILLE DE LA DIV - TAILLE DE INPUT CHECKBOX
-
     // create Task
+    const taskDiv = document.createElement('div');
+    taskDiv.setAttribute('class', 'todoTaskDiv');
+    form.after(taskDiv);
+
     const checkBox = document.createElement('input');
     checkBox.setAttribute('type', 'checkbox');
-    checkBox.setAttribute('id', 'todoCheckBox');
-    form.after(checkBox);
+    checkBox.setAttribute('class', 'todoCheckBox');
+    taskDiv.appendChild(checkBox)
 
     const task = document.createElement('div');
     task.textContent = inputValue;
-    task.setAttribute('id', 'todoTask');
+    task.setAttribute('class', 'todoTask');
     checkBox.after(task);
-
-
-    
-  }
+  },
 
 };
 

@@ -7,16 +7,17 @@ body {
   font-size: 1.5rem;
 }
 
-#todo {
-  flex-direction: column;
+h1 {
+  margin: 2rem 0 1rem 0;
+  text-transform: uppercase;
 }
 
-input[type="text"]
-{
+input[type="text"] {
   font-size: 1.5rem;
 }
 
-#todoInput, #todoTask {
+#todoInput,
+.todoTask {
   font-family: 'Parisienne', cursive;
   height: 4rem;
   padding: 0.5rem;
@@ -26,11 +27,16 @@ input[type="text"]
   width: 40vw;
 }
 
-#todoTask {
+.todoTaskDiv {
   background-color: #C6AA53;
   border: solid 1px black;
   display: flex;
-  align-items: center;
+  flex-direction: row;
   margin-top: 1rem;
-  width: calc(40vw + 5px);
+  width: calc(40vw + 18px);
+}
+
+.todoTask {
+  display: flex;
+  align-items: center;
 }
